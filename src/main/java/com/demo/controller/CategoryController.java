@@ -24,22 +24,24 @@ public class CategoryController {
 	public Category m1(@RequestBody Category category) {
 		return cs.addCategory(category);
 	}
-	
+
 	@GetMapping("/req1")
-	public List<Category> m2(){
+	public List<Category> m2() {
 		return cs.getAll();
 	}
-	
+
 	@PutMapping("/req2/{id}")
 	public Category updateCategory(
 			@PathVariable int id,
 			@RequestBody Category category) {
 		return cs.updateCategory(id, category);
 	}
-	
+
 	@DeleteMapping("/req3/{id}")
 	public String delete(@PathVariable int id) {
 		cs.deleteCategory(id);
 		return "category deleted";
-	}	
+	}
+	
+	
 }
